@@ -1,72 +1,39 @@
 ---
 layout: page
-title: My website
-subtitle: This is where I will tell my friends way too much about me
 use-site-title: true
 ---
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | relative_url }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
-
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
-
-    <p class="post-meta">
-      Posted on {{ post.date | date: site.date_format }}
-    </p>
-
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ post.image | relative_url }}">
-        </a>
+  <div class="row">
+    <div class="col-sm">
+        <img src="./img/abel.jpg" width="250px" hspace="100px" align="left"><br>
+    </div>
+    <div class="col-sm">
+        <h3 class="post-entry">Abel Gomez, Ph.D. Student</h3>
+        <div class="post-entry"> 
+          Ph.D. Research Assistant <br>
+          Department of Computer Science <br>
+          University of Texas at El Paso <br>
+        </div>
       </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <h3>Biography</h3>
+    <div class="post-entry">
+      <div align="justify">
+        <p>
+          I am a Ph.D. Research Assistant in <a href="http://www.cs.utep.edu" target="new">Computer Science</a> at the <a href="http://www.utep.edu" target="new">University of Texas at El Paso (UTEP)</a>. 
+          I was appointed as Reseach Assistant in January of 2019, where I work with Dr. Deepak Tosh at the TRUstworthy CYBER system <a href="http://www.cs.utep.edu/dktosh/trucyberlab/" target="new">(TRUCYBER)</a> 
+          collaborating with researchers from Air Force Research Lab and Army Research Lab to research challenges in the area of distributed systems security, Blockchain, cybersecurity information, and Cyber Physical Systems.
+          I have received my Masters in Software Engineering from UTEP and my Bachelors' in Computer Science at Universidad Autonoma de Ciudad Juarez.
+        </p>
       </div>
     </div>
-
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
-    </div>
-    {% endif %}
-
-   </article>
-  {% endfor %}
-</div>
-
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | relative_url }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+  </div>
+  <div class="row">
+      <h3>Research Interests</h3>
+      <p>
+          Security and privacy in cybersecurity National Critical Infrastructures, Distributed system security, Blockchain, Internet of Things (IoT) security, Network security.
+      </p>
+  </div>
